@@ -6,5 +6,14 @@ require 'shotgun'
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'pets_dev')
 
 get '/' do
-  "Hello Bob!"
+  erb :index
 end
+
+post '/' do
+  e = Elephant.new#create!(:name => params[:name])
+  e.name = params[:name]
+  e.save
+  redirect '/'
+end
+
+#asdf
