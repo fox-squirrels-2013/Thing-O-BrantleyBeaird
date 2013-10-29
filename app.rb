@@ -13,6 +13,7 @@ post '/' do
   e = Elephant.new#create!(:name => params[:name])
   e.name = params[:name]
   e.save
+  p e
   redirect '/'
 end
 
